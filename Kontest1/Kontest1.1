@@ -1,0 +1,40 @@
+#include <stack>
+#include <cstdio>
+#include <cstring>
+using namespace std;
+char str1[15];
+stack <int> st1;
+int n = strlen(str1), x, a;
+int main() {
+   while (true) {
+   
+       scanf("%s", str1);
+       if (!strcmp(str1, "push"))
+       {
+           scanf("%d", &x);
+           st1.push(x);
+           printf("ok\n");
+       }
+       if (!strcmp(str1, "exit")){
+           printf("bye\n");
+           break;
+       }
+       if (!strcmp(str1, "pop")){
+           printf("%d\n", st1.top());
+           st1.pop();
+       }
+       if (!strcmp(str1, "back")) {
+           a = st1.top();
+       printf("%d\n", a);
+   }
+       if (!strcmp(str1, "size")) {
+           printf("%d\n", st1.size());
+       }
+       if (!strcmp(str1, "clear")){
+           while (!st1.empty())
+               st1.pop();
+           printf("ok\n");
+       }
+   }
+   return 0;
+}
